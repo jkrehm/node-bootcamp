@@ -17,5 +17,8 @@
         "grunt-contrib-uglify": "~0.2.0",
         "grunt-contrib-watch": "~0.4.3",
         "node-monkey": "~0.2.6"
+    },
+    "engines": {
+        "node": ">=0.10.5"
     }
 }
