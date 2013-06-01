@@ -2,7 +2,8 @@
     "project": "Node Bootcamp",
     "version": "0.1.0",
     "dependencies": {
-        "handlebars": "~1.0.0"
+        "handlebars": "~1.0.0",
+        "node-monkey": "~0.2.6"
     },
     "devDependencies": {
         "grunt": "~0.4.1",

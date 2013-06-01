@@ -20,18 +20,18 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'public/js/app/templates.js': templates
+                    'public/js/templates.js': templates
                 }
             }
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                banner: '/*! <%= pkg.project %> - v<%= pkg.version %> - ' +
                     '<%= grunt.template.today("yyyy-mm-dd") %> */' + "\n"
             },
             my_target: {
                 files: {
-                    'public/js/app/templates.js': 'public/js/app/templates.js'
+                    'public/js/templates.js': 'public/js/templates.js'
                 }
             }
         }

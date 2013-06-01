@@ -1,0 +1,2 @@
+/*! Node Bootcamp - v0.1.0 - 2013-06-01 */
+define(["handlebars"],function(a){return this.JST=this.JST||{},this.JST.main=a.template(function(a,b,c,d,e){this.compilerInfo=[4,">= 1.0.0"],c=this.merge(c,a.helpers),e=e||{};var f,g="",h="function",i=this.escapeExpression;return g+="hello ",(f=c.name)?f=f.call(b,{hash:{},data:e}):(f=b.name,f=typeof f===h?f.apply(b):f),g+=i(f)}),this.JST});
