@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    var templates = ['templates/**/*.hbs'];
+    var templates = ['views/**/*.hbs'];
 
     // Project configuration.
     grunt.initConfig({
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.project %> - v<%= pkg.version %> - ' +
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
                     '<%= grunt.template.today("yyyy-mm-dd") %> */' + "\n"
             },
             my_target: {

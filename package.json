@@ -1,5 +1,5 @@
 {
-    "project": "Node Bootcamp",
+    "name": "node-bootcamp",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -19,6 +19,6 @@
         "node-monkey": "~0.2.6"
     },
     "engines": {
-        "node": ">=0.8.2"
+        "node": ">=0.8.19"
     }
 }
