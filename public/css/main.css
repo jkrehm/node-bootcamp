@@ -1,22 +1,9 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.ui-console {
+    position: relative;
+    min-height: 400px;
+}
+.ui-console textarea {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

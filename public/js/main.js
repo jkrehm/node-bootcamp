@@ -30,15 +30,10 @@ require.config({
 });
 
 
-require(['domready', 'socket'], function(domReady, io) {
-    var socket = io.connect();
-
-    socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
-    });
+require(['domready', 'app/app'], function(domReady, App) {
 
     domReady(function() {
-        
+        new App();
     });
+
 });

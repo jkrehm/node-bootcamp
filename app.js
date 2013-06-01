@@ -1,8 +1,3 @@
-
-/**
-* Module dependencies.
-*/
-
 require('node-monkey').start({
     host: '127.0.0.1'
 });
@@ -34,28 +29,47 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-var pubdir = __dirname + '/public';
 
+var pubdir = __dirname + '/public',
+    users = new Array();
+
+
+// Routes
 app.get('/', function (req, res) {
     res.sendfile(pubdir + '/index.html');
 });
-app.get('/users', user.list);
+app.get('/users', function(req, res) {
+    res.send( users );
+});
+// app.get('/users', user.list);
+
 
 var server = http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
 
+
 // Socket.io
 io = socket.listen(server);
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
-        console.log(data);
+    users.push({
+        id: socket.id
+    });
+
+    io.sockets.emit('connected', { id: socket.id });
+
+    socket.on('broadcast', function(data) {
+        socket.broadcast.emit('update', data);
+    });
+
+    socket.on('disconnect', function() {
+        for (i in users) {
+            if (users[i].id === socket.id) {
+                users.splice(i, 1);
+            }
+        }
+
+        io.sockets.emit('disconnected');
     });
 });
-
-// setInterval(function() {
-//     count += 1;
-//     socket.emit('count', count);
-// }, 1000);

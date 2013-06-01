@@ -16,11 +16,11 @@ module.exports = function(grunt) {
                 options: {
                     amd: true,
                     processName: function(filepath) {
-                        return filepath.replace('templates/','').replace('.hbs','');
+                        return filepath.replace('views/','').replace('.hbs','');
                     }
                 },
                 files: {
-                    'public/js/templates.js': templates
+                    'public/js/app/templates.js': templates
                 }
             }
         },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    'public/js/templates.js': 'public/js/templates.js'
+                    'public/js/app/templates.js': 'public/js/app/templates.js'
                 }
             }
         }

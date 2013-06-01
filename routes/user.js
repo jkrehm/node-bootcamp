@@ -4,5 +4,24 @@
  */
 
 exports.list = function(req, res){
-  res.send("respond with a resource");
+    res.send([
+        {
+            id: '1234'
+        },
+        {
+            id: '1235'
+        },
+        {
+            id: '1236'
+        },
+        {
+            id: '1237'
+        },
+        {
+            id: '1238'
+        },
+        {
+            id: '1239'
+        },
+    ]);
 };
